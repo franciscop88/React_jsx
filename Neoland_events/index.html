@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.1 Añade un botón con el id btnToClick -->
+    <button id="btnToClick">Haz clic aquí</button>
+    <!-- Inputs para las otras partes -->
+    <input class="click" type="text"/>
+    <input class="focus" type="text"/>
+    <input class="value" type="text"/>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1.1 Añade un evento 'click' al botón que ejecute un console.log con la información del evento de clic
+            var btnToClick = document.getElementById("btnToClick");
+            btnToClick.addEventListener("click", function(event) {
+                console.log("Información del evento de clic:", event);
+            });
+
+            // 1.2 Añade un evento 'focus' que ejecute un console.log con el valor del input.
+            var focusInput = document.querySelector(".focus");
+            focusInput.addEventListener("focus", function(event) {
+                console.log("Valor del input en focus:", event.target.value);
+            });
+
+            // 1.3 Añade un evento 'input' que ejecute un console.log con el valor del input.
+            var valueInput = document.querySelector(".value");
+            valueInput.addEventListener("input", function(event) {
+                console.log("Valor del input cambiado:", event.target.value);
+            });
+        });
+    </script>
+</body>
+</html>
